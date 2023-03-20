@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.control-buttons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 4%, 67%, 0.904);
+    z-index: 2;
+}
+
+.control-buttons span {
+    position: absolute;
+    color: white;
+    width: 250px;
+    height: 110px;
+    border: 20px solid #f44336;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#mypop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 4%, 67%, 0.904);
+    z-index: 2;
+}
+
+.submit {
+    position: absolute;
+    color: white;
+    width: 550px;
+    height: 300px;
+    border: 20px solid #f44336;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #f44336;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.submit input {
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: 0 solid red;
+    margin: -50px 105px 0 105px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.submit button {
+    width: 230px;
+    height: 80px;
+    border-radius: 20px;
+    border: 0 solid red;
+    margin: 0px 140px 0 140px;
+    font-size: 44px;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+}
+
+.info-container {
+    width: 1180px;
+    margin: 20px auto 0;
+    font-size: 24px;
+    border: 2px solid #c20000;
+    padding: 20px;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.memory-game-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+    margin: 20px auto;
+    justify-content: space-around;
+
+}
+
+.memory-game-blocks .game-block .back img {
+    width: 160px;
+    height: 160px;
+    margin: 20px;
+}
+
+.memory-game-blocks .game-block {
+    height: 200px;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+
+}
+
+.memory-game-blocks.no-clicking {
+    pointer-events: none;
+}
+
+.memory-game-blocks .game-block .front {
+    background-color: #333;
+    line-height: 200px;
+}
+
+.memory-game-blocks .game-block .front:before {
+    content: "!";
+    color: #c20000;
+    font-size: 140px;
+    font-weight: bold;
+
+}
+
+.memory-game-blocks .game-block .back {
+    background: radial-gradient(ellipse at top, #ffffff50, transparent), radial-gradient(ellipse at bottom, #ff000056, transparent);
+    transform: rotateY(180deg);
+}
+
+.memory-game-blocks .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #c20000;
+    text-align: center;
+}
+
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+
+}
+
+
+.end-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #575555c0;
+    display: none;
+
+}
+
+.end-container .again {
+    position: absolute;
+    width: 350px;
+    height: 150px;
+    background-color: #f44336;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.end-container .again input {
+    width: 64%;
+    height: 40%;
+    margin-left: 18%;
+    border-radius: 20px;
+    border-color: white;
+    font-size: 30px;
+    font-weight: bold;
+}

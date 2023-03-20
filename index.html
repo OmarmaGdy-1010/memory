@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="memoryGame.css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memory Game</title>
+    </head>
+
+    <body>
+        <div class="control-buttons">
+            <span>Start Game</span>
+        </div>
+        <div class="info-container">
+            <div class="name">Hello : <span></span></div>
+            <div class="tries">Wrong tries <span>0</span></div>
+        </div>
+        <div class="memory-game-blocks">
+            <div class="game-block" data-num="one">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-1.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="one">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-1.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="two">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-2.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="two">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-2.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="three">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-3.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="three">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-3.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="four">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-4.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="four">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-4.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="five">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-5.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="five">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-5.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="six">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-6.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="six">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-6.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="seven">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-7.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="seven">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-7.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="eight">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-8.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="eight">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-8.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="nine">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-9.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="nine">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-9.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="ten">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-10.webp" alt="" />
+                </div>
+            </div>
+            <div class="game-block" data-num="ten">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="avatar/man-avatar-10.webp" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="end-container">
+            <div class="again">
+                <input id="try" type="button" value="Try Again" />
+            </div>
+        </div>
+        <audio id="flip" src="audio/flip.mp3"></audio>
+        <audio id="negative" src="audio/negative.mp3"></audio>
+        <audio id="sucsess" src="audio/succses.mp3"></audio>
+        <audio id="win" src="audio/win.mp3"></audio>
+        <script type="text/javascript" src="memoryGame.js"></script>
+    </body>
+
+</html>
