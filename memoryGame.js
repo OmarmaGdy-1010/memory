@@ -3,6 +3,12 @@
 let body = document.querySelector("body");
 let start = document.querySelector(".control-buttons span");
 let startmain = document.querySelector(".control-buttons");
+let duration = 1000;
+let blocksContainer = document.querySelector(".memory-game-blocks");
+let blocks = Array.from(blocksContainer.children);
+let orderRange = Array.from(Array(blocks.length).keys());
+
+let count = 0 
 
 
 start.onclick = function () {
@@ -28,6 +34,7 @@ start.onclick = function () {
     //--------------------------------------
     btn.onclick = function () {
 
+    cheet()
 
         if (inp.value == null || inp.value == "") {
             document.querySelector(".name").innerHTML += "Unknown";
@@ -40,14 +47,13 @@ start.onclick = function () {
 
 
 
-
+function cheet() {
+    setInterval(() => {
+        blocks.map((e) => e.style.transform = 'rotateY(180deg)')
+    }, duration*3); 
+}
 //---------------------------------------------------------------------------------------------------------------------------------------
-let duration = 1000;
-let blocksContainer = document.querySelector(".memory-game-blocks");
-let blocks = Array.from(blocksContainer.children);
-let orderRange = Array.from(Array(blocks.length).keys());
 
-let count = 0
 
 
 
@@ -145,3 +151,8 @@ function playagain() {
         location.reload();
     });
 }
+
+
+
+
+
