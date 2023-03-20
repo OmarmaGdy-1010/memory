@@ -47,24 +47,50 @@ let blocksContainer = document.querySelector(".memory-game-blocks");
 let blocks = Array.from(blocksContainer.children);
 let orderRange = Array.from(Array(blocks.length).keys());
 
+let count = 0
+
+
+
+function checkMatchedBlocks(f, s) {
+
+    let triesElement = document.querySelector(".tries span");
+    if (f.dataset.num === s.dataset.num) {
+
+        document.getElementById("sucsess").play();
+        f.classList.remove("is-flipped");
+        s.classList.remove("is-flipped");
+        f.classList.add("has-match");
+        s.classList.add("has-match");
+        count++
+
+    } else {
+        triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+        document.getElementById("negative").play();
+        setTimeout(() => {
+            f.classList.remove("is-flipped");
+            s.classList.remove("is-flipped");
+        }, duration);
+        document.getElementById('fail').play();
+    }
+}
 
 
 
 
-
-
-let macth = 0;
 blocks.forEach((block) => {
+
+    
     block.style.order = Math.floor(Math.random() * blocks.length) + 1;
     block.addEventListener("click", function () {
         document.getElementById("flip").play();
         block.classList.add("is-flipped");
         let allFlippedBlocks = blocks.filter(block => block.classList.contains("is-flipped"));
+
         if (allFlippedBlocks.length == 2) {
-            macth += 1;
+            console.log(count);
             stopClicking();
             checkMatchedBlocks(allFlippedBlocks[ 0 ], allFlippedBlocks[ 1 ]);
-            if (macth == 10) {
+            if (count == 10) {
                 for (let i = 0; i < 10; i++) {
                     setInterval(() => {
                         blocks[ i++ ].style.transform = 'rotateX(90deg)';
@@ -101,28 +127,6 @@ function stopClicking() {
 
 
 
-function checkMatchedBlocks(f, s) {
-    
-    let triesElement = document.querySelector(".tries span");
-    if (f.dataset.num === s.dataset.num) {
-        
-        document.getElementById("sucsess").play();
-        f.classList.remove("is-flipped");
-        s.classList.remove("is-flipped");
-        f.classList.add("has-match");
-        s.classList.add("has-match");
-        console.log(macth)
-
-    } else {
-        triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
-        document.getElementById("negative").play();
-        setTimeout(() => {
-            f.classList.remove("is-flipped");
-            s.classList.remove("is-flipped");
-        }, duration);
-        document.getElementById('fail').play();
-    }
-}
 
 
 
@@ -131,6 +135,7 @@ function checkMatchedBlocks(f, s) {
 function playagain() {
     let endContainer = document.querySelector(".end-container");
     let btnTryAgain = document.getElementById("try");
+
     document.getElementById("win").play();
     setTimeout(() => {
         endContainer.style.display = "block";
@@ -140,8 +145,3 @@ function playagain() {
         location.reload();
     });
 }
-
-
-
-
-
