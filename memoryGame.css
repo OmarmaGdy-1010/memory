@@ -148,23 +148,23 @@ body {
 
 .memory-game-blocks .game-block .back {
     background: radial-gradient(ellipse at top, #ffffff50, transparent), radial-gradient(ellipse at bottom, #ff000056, transparent);
-    transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
 .memory-game-blocks .game-block .face {
+    transform: rotateY(360deg);
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
     border: 2px solid #c20000;
     text-align: center;
 }
 
 .memory-game-blocks .game-block.is-flipped,
 .memory-game-blocks .game-block.has-match {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg)!important;
+    -moz-transform: rotateY(180deg)!important;
+    transform: rotateY(360deg) !important;
     pointer-events: none;
 
 }
